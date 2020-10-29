@@ -15,12 +15,13 @@ private static final Logger log= LoggerFactory.getLogger(ConsumingRestApplicatio
     public static void main(String[] args) {
         SpringApplication.run(ConsumingRestApplication.class, args);
     }
-
+//    A RestTemplate, which uses the Jackson JSON processing library to process the incoming data.
+//  cần thằng restTemplate này, dùng thư viện Jaskson để xử lí dữ liệu JSON gửi tới
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder){
     return builder.build();
     }
-
+// thằng commandLineRunner này để chạy thg RestTemplate khi spring khởi động
     @Bean
     public CommandLineRunner run(RestTemplate restTemplate){
     return args -> {
@@ -28,4 +29,6 @@ private static final Logger log= LoggerFactory.getLogger(ConsumingRestApplicatio
         log.info(quote.toString());
     };
     }
+
+
 }
