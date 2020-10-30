@@ -12,9 +12,16 @@ public class Controller {
     private RestTemplate restTemplate;
     @GetMapping("/shit")
     @ResponseBody
-    public String shit(){
+    public String shitString(){
 //        Lấy ra dữ liệu từ API , gắn nó vào Object Quote
         Quote quote =restTemplate.getForObject("https://gturnquist-quoters.cfapps.io/api/random",Quote.class);
         return quote.toString();
+    }
+    @GetMapping("/shitObject")
+    @ResponseBody
+    public Object shitObject(){
+//        Lấy ra dữ liệu từ API , gắn nó vào Object Quote
+        Object quote =restTemplate.getForObject("http://localhost:8081/shit",Quote.class);
+        return quote;
     }
 }

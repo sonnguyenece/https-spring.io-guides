@@ -34,8 +34,4 @@ private static final Logger log= LoggerFactory.getLogger(ConsumingRestApplicatio
 //        log.info(quote.toString());
     };
     }
-
-
-
-
 }
